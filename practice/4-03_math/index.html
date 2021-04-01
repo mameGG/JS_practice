@@ -20,6 +20,22 @@
 <section>
   <p>円周率は<span id="pi"></span>です</p>
   <p>切り捨てると<span id="floor"></span>です</p>
+  <p>小数点を切り捨てると<span id="fixed"></span>です</p>
+  <p>小数点を切り捨てると<span id="output"></span>です</p>
+  <pre>
+    *自分で考えたとこ
+    let P = Math.floor(Math.PI * (10*10)) / (10*10);
+    document.getElementById('output').textContent = P;
+  </pre>
+  <p>小数点を切り捨てると<span id="output2"></span>です</p>
+  <pre>
+    *参考書の答え
+  function point(num, digit) {
+    const mover = 10 ** digit;
+    return Math.floor(num * mover) / mover;
+  }
+  document.getElementById('output2').textContent = point(Math.PI,3);
+  </pre>
 </section>
 </div><!-- /.container -->
 </main>
@@ -33,6 +49,19 @@
 
   document.getElementById('pi').textContent = Math.PI;
   document.getElementById('floor').textContent = Math.floor(Math.PI);
+  document.getElementById('fixed').textContent = Math.PI.toFixed(3);
+
+  // 自分で考えたとこ
+  let P = Math.floor(Math.PI * (10*10)) / (10*10);
+  document.getElementById('output').textContent = P;
+
+// 参考書の答え
+  function point(num, digit) {
+    const mover = 10 ** digit;
+    return Math.floor(num * mover) / mover;
+  }
+  document.getElementById('output2').textContent = point(Math.PI,3);
+
 </script>
 </body>
 </html>
