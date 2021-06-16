@@ -19,7 +19,7 @@
 <main>
 <div class="container">
 <section>
-
+  <p><button id="testbtn">テスト用　cookie削除</button></p>
 </section>
 </div><!-- /.container -->
 </main>
@@ -47,6 +47,11 @@
       Cookies.set('cookie-agree', 'yes',{expires: 7});
     };
   }
+
+  //クッキー削除（テスト用）
+  document.getElementById('testbtn').onclick = function() {
+    Cookies.remove('cookie-agree');
+  };
 </script>
 </body>
 </html>
